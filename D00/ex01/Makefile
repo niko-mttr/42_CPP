@@ -8,7 +8,7 @@ CFLAGS	= -Wall -Werror -Wextra -std=c++98
 INC		= includes/
 
 #SRC
-SRC		= megaphone.cpp
+SRC		= main.cpp Contact.cpp PhoneBook.cpp
 
 #OBJETS
 OBJ		= $(SRC:%.cpp=%.o)
