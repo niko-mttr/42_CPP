@@ -1,7 +1,7 @@
-NAME	= megaphone
+NAME	= PhoneBook
 
 #COMPILATION
-CC		= g++
+CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
 #INCLUDES
@@ -18,7 +18,7 @@ OBJ		= $(SRC:%.cpp=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) $^ -o $@
 
 $(OBJ): $(SRC)
 	$(CC) $(CFLAGS) -c $^
