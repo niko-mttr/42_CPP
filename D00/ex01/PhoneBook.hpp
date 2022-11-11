@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:31:10 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/08 18:15:05 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/11 17:52:26 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,17 @@ class PhoneBook
 {
 	public:
 	
-	PhoneBook();
-	~PhoneBook();
-	void add(int nb_add);
-	void search();
-	void exit();
+		PhoneBook();
+		~PhoneBook();
+		void ft_swap();
+		void add(int nb_add);
+		void search(int nb_contact);
+		void exit();
+		int		testtt;
 	
 	private:
 	
-	Contact contact[8];
+		Contact contact[8];
 };
 
 #endif

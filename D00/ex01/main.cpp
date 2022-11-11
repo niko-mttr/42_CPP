@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:56:57 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/08 18:15:08 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/11 17:20:17 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ int main()
 				break ;
 			else if (buff == "ADD")
 				book.add(++nb_add);
+			else if (buff == "SEARCH")
+				book.search(nb_add);
 	}
 }

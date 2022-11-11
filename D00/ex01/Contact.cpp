@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:22:41 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/08 18:22:58 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:43:51 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,14 @@ Contact::~Contact()
 
 string ft_fill()
 {
-	string	buff(NULL);
+	string	buff("");
 	
-	while ()
-	//tant que buff est null on boucle avec message d'erreur
+	while (!buff.length())
+	{
+		cin >> buff;
+		if (!buff.length())
+			cout << "you must enter at least one caracter" << endl;
+	}
 
 	return buff;
 }
@@ -38,18 +42,29 @@ void	Contact::fill()
 {
 	cout << "first name :" << endl;
 	cin >> first_name;
-	first_name = ft_fill();
 	cout << "last name :" << endl;
-	cin >> last_name; 
+	cin >> last_name;
 	cout << "nick name :" << endl;
-	cin >> nick_name; 
+	cin >> nick_name;
 	cout << "phone number :" << endl;
-	cin >> number; 
+	cin >> number;
 	cout << "darkest secret:" << endl;
-	cin >> number; 
+	cin >> secret;
 }
 
-void	Contact::print()
+void	Contact::printall(int index)
 {
-	cout << "mon contact" << first_name << endl;
+	cout << index << " | ";
+	cout << first_name << " | ";
+	cout << last_name << " | ";
+	cout << nick_name << " | " << endl;
+}
+
+void Contact::printcontact()
+{
+	cout << first_name << endl;
+	cout << last_name << endl;
+	cout << nick_name << endl;
+	cout << number << endl;
+	cout << secret << endl;
 }

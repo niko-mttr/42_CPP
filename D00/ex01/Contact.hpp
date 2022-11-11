@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:22:06 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/08 18:15:04 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:36:08 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,15 @@ class Contact
 public:
 	Contact();
 	~Contact();
-	void print();
+	void printall(int index);
+	void printcontact();
 	void fill();
 private:
-	std::string first_name;
-	std::string last_name;
-	std::string nick_name;
-	std::string number;
-	std::string secret;
+	std::string	first_name;
+	std::string	last_name;
+	std::string	nick_name;
+	std::string	number;
+	std::string	secret;
 };
 
 #endif
