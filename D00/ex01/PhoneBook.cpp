@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:31:25 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/11 18:41:20 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/12 11:54:36 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,41 @@ PhoneBook::~PhoneBook()
 	
 }
 
+void	PhoneBook::ft_index(int nb_contact)
+{
+	int		index;
+
+	cout << "Please enter the number of the contact you wan to see :" << endl;
+	while (1)
+	{
+		cin >> index;
+		if (std::cin.fail())
+		{
+        	std::cin.clear();
+        	std::cin.ignore();
+    	}
+		else
+			if (index <= nb_contact && index <= 8 && index)
+				break ;
+		cout << "Wrong number : Please try again" << endl;
+	}
+	contact_[index - 1].printcontact();
+}
+
 void	PhoneBook::search(int nb_contact)
 {
 	int i;
-	int choice;
 
 	i = 0;
+	//protection s'il n' y a aucun contact
 	if (nb_contact > 8)
 		nb_contact = 8;
 	while (i < nb_contact)
 	{
-		contact[i].printall(i + 1);
+		contact_[i].printall(i + 1);
 		i++;
 	}
-	cout << "Please enter the number of the contact you wan to see :" << endl;
-	cin >> choice;
-	while (choice > nb_contact || choice > 8)
-	{
-		cout << "Wrong number : Please try again" << endl;
-		cin >> choice;
-	}
-	contact[choice - 1].printcontact();
+	ft_index(nb_contact);
 }
 
 void	PhoneBook::ft_swap()
@@ -55,9 +69,9 @@ void	PhoneBook::ft_swap()
 	i = 0;
 	while (i < 7)
 	{
-		contact[i] = tmp;
-		contact[i] = contact[i + 1];
-		contact[i + 1] = tmp;
+		contact_[i] = tmp;
+		contact_[i] = contact_[i + 1];
+		contact_[i + 1] = tmp;
 		i++;
 	}
 }
@@ -72,5 +86,5 @@ void	PhoneBook::add(int nb_add)
 		ft_swap();
 		i = 7;
 	}
-	contact[i].fill();
+	contact_[i].fill();
 }

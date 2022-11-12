@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:22:06 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/11 18:36:08 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/12 11:17:02 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ public:
 	void printcontact();
 	void fill();
 private:
-	std::string	first_name;
-	std::string	last_name;
-	std::string	nick_name;
-	std::string	number;
-	std::string	secret;
+	std::string	first_name_;
+	std::string	last_name_;
+	std::string	nick_name_;
+	std::string	number_;
+	std::string	secret_;
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:22:41 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/11 18:43:51 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/12 11:54:12 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,47 +24,47 @@ Contact::~Contact()
 	
 }
 
-string ft_fill()
+string ft_fill_info(string message)
 {
-	string	buff("");
-	
-	while (!buff.length())
-	{
-		cin >> buff;
-		if (!buff.length())
-			cout << "you must enter at least one caracter" << endl;
-	}
-
-	return buff;
+    string s;
+    while (getline(cin, s))
+    {
+        if (!s.empty())
+            break;
+		else
+			cout << "you must enter at least one caracter" << endl << message;
+    }
+	return (s);
 }
-
 void	Contact::fill()
 {
-	cout << "first name :" << endl;
-	cin >> first_name;
-	cout << "last name :" << endl;
-	cin >> last_name;
-	cout << "nick name :" << endl;
-	cin >> nick_name;
-	cout << "phone number :" << endl;
-	cin >> number;
-	cout << "darkest secret:" << endl;
-	cin >> secret;
+	cout << "Fill the following contact informations : " << endl;
+	cin.ignore();
+	cout << "first name : " ;
+	first_name_ = ft_fill_info("first name : ");
+	cout << "last name : ";
+	last_name_ = ft_fill_info("last name : ");
+	cout << "nick name : ";
+	nick_name_ = ft_fill_info("nick name : ");
+	cout << "phone number : ";
+	number_ = ft_fill_info("phone number : ");
+	cout << "darkest secret : ";
+	secret_ = ft_fill_info("darkest secret: ");
 }
 
 void	Contact::printall(int index)
 {
 	cout << index << " | ";
-	cout << first_name << " | ";
-	cout << last_name << " | ";
-	cout << nick_name << " | " << endl;
+	cout << first_name_ << " | ";
+	cout << last_name_ << " | ";
+	cout << nick_name_ << " | " << endl;
 }
 
 void Contact::printcontact()
 {
-	cout << first_name << endl;
-	cout << last_name << endl;
-	cout << nick_name << endl;
-	cout << number << endl;
-	cout << secret << endl;
+	cout << first_name_ << endl;
+	cout << last_name_ << endl;
+	cout << nick_name_ << endl;
+	cout << number_ << endl;
+	cout << secret_ << endl;
 }

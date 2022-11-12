@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:31:10 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/11 17:52:26 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/12 11:37:18 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ class PhoneBook
 		~PhoneBook();
 		void ft_swap();
 		void add(int nb_add);
+		void ft_index(int nb_contact);
 		void search(int nb_contact);
 		void exit();
 		int		testtt;
 	
 	private:
 	
-		Contact contact[8];
+		Contact contact_[8];
 };
 
 #endif
