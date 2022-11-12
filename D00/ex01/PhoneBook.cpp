@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
+/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:31:25 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/12 11:54:36 by nicolasmatt      ###   ########.fr       */
+/*   Updated: 2022/11/12 14:56:37 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,20 @@ PhoneBook::~PhoneBook()
 
 void	PhoneBook::ft_index(int nb_contact)
 {
-	int		index;
-
-	cout << "Please enter the number of the contact you wan to see :" << endl;
+	int index;
+	cout << "Enter the index of the contact : ";
 	while (1)
 	{
-		cin >> index;
-		if (std::cin.fail())
+		while (!(cin >> index))
 		{
-        	std::cin.clear();
-        	std::cin.ignore();
-    	}
+			cin.clear();
+			cin.ignore(1000, '\n');
+			cout << "Not a valid index. Please try again : ";
+		}
+		if (index > 0 && index <= nb_contact && index < 9)
+			break ;
 		else
-			if (index <= nb_contact && index <= 8 && index)
-				break ;
-		cout << "Wrong number : Please try again" << endl;
+			cout << "Not a valid index. Please try again : ";
 	}
 	contact_[index - 1].printcontact();
 }
@@ -50,15 +49,19 @@ void	PhoneBook::search(int nb_contact)
 	int i;
 
 	i = 0;
-	//protection s'il n' y a aucun contact
-	if (nb_contact > 8)
-		nb_contact = 8;
-	while (i < nb_contact)
-	{
-		contact_[i].printall(i + 1);
-		i++;
+	if (nb_contact > 0)
+	{	
+		if (nb_contact > 8)
+			nb_contact = 8;
+		while (i < nb_contact)
+		{
+			contact_[i].printall(i + 1);
+			i++;
+		}
+		ft_index(nb_contact);
 	}
-	ft_index(nb_contact);
+	else
+		cout << "No contact at this time." << endl;
 }
 
 void	PhoneBook::ft_swap()

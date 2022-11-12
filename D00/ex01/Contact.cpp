@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
+/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:22:41 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/12 11:54:12 by nicolasmatt      ###   ########.fr       */
+/*   Updated: 2022/11/12 15:19:24 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,26 @@ void	Contact::fill()
 	secret_ = ft_fill_info("darkest secret: ");
 }
 
+void	ft_printer(string s)
+{
+	int length;
+
+	length = s.length();
+	if (length > 10)
+		cout << s.substr(0, 9) << ". | "; 
+	else if (length < 10)
+		cout << setw(10) << s << " | ";
+	else
+		cout << s << " | ";
+}
+
 void	Contact::printall(int index)
 {
 	cout << index << " | ";
-	cout << first_name_ << " | ";
-	cout << last_name_ << " | ";
-	cout << nick_name_ << " | " << endl;
+	ft_printer(first_name_);
+	ft_printer(last_name_);
+	ft_printer(nick_name_);
+	cout << endl;
 }
 
 void Contact::printcontact()
