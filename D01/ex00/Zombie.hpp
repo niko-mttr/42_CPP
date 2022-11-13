@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 19:14:52 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/12 19:27:14 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/13 15:28:48 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,16 @@
 class Zombie
 {
 	private:
-		std::string	name;
+		std::string	_name;
+		
 	public:
 		Zombie();
+		Zombie(std::string name);
 		~Zombie();
 		void announce( void );
 };
+
+Zombie*	newZombie( std::string name );
+void 	randomChump( std::string name );
 
 #endif

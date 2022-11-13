@@ -1,4 +1,4 @@
-NAME	= Account
+NAME	= Zombie
 
 #COMPILATION
 CC		= c++
@@ -8,7 +8,10 @@ CFLAGS	= -Wall -Werror -Wextra -std=c++98
 INC		= includes/
 
 #SRC
-SRC		= main.cpp
+SRC		=	main.cpp\
+			Zombie.cpp\
+			newZombie.cpp\
+			randomChump.cpp
 
 #OBJETS
 OBJ		= $(SRC:%.cpp=%.o)
