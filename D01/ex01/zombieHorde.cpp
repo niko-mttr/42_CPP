@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 19:14:18 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/18 14:54:35 by nmattera         ###   ########.fr       */
+/*   Created: 2022/11/18 15:01:10 by nmattera          #+#    #+#             */
+/*   Updated: 2022/11/18 15:24:59 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+Zombie* zombieHorde( int N, std::string name )
 {
-	Zombie* zombie;
-	
-	randomChump("Mathias");
-	zombie = newZombie("Arnault");
-	zombie->announce();
-	delete zombie;
+	if (N < 1)
+		return NULL;
+	Zombie *nouveau = new Zombie[N];
+
+	for (int i = 0; i < N; i++)
+		nouveau[i] = Zombie(name);
+	return nouveau;
 }

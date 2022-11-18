@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 19:14:18 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/18 14:54:35 by nmattera         ###   ########.fr       */
+/*   Created: 2022/11/12 19:15:13 by nmattera          #+#    #+#             */
+/*   Updated: 2022/11/18 15:00:47 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+using namespace std;
+
+Zombie::Zombie()
 {
-	Zombie* zombie;
 	
-	randomChump("Mathias");
-	zombie = newZombie("Arnault");
-	zombie->announce();
-	delete zombie;
+}
+
+Zombie::Zombie(string name)
+{
+	_name = name;
+}
+
+Zombie::~Zombie()
+{
+	
+}
+
+void	Zombie::announce()
+{
+	cout << _name << ": BraiiiiiiinnnzzzZ..." << endl;
 }
