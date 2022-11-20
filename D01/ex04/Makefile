@@ -1,4 +1,4 @@
-NAME	= Violence
+NAME	= sed
 
 #COMPILATION
 CC		= c++
@@ -9,9 +9,6 @@ INC		= includes/
 
 #SRC
 SRC		=	main.cpp\
-			Weapon.cpp\
-			HumanA.cpp\
-			HumanB.cpp\
 
 #OBJETS
 OBJ		= $(SRC:%.cpp=%.o)

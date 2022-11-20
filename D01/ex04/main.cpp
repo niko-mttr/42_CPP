@@ -5,39 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 13:08:37 by nicolasmatt       #+#    #+#             */
-/*   Updated: 2022/11/20 16:37:01 by nmattera         ###   ########.fr       */
+/*   Created: 2022/11/20 17:25:28 by nmattera          #+#    #+#             */
+/*   Updated: 2022/11/20 17:47:44 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "sed.hpp"
 
-int	main()
+int main(int ac, char **av)
 {
+	if (ac != 4)
 	{
-		Weapon club = Weapon("crude spiked club");
-
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
+		std::cout << "wrong number of arguments" << std::endl;
+		return 1;	
 	}
-	{
-		Weapon club = Weapon("crude spiked club");
-
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-
-		HumanB jack("Jack");
-		jack.attack();
-	}
-return 0;
+	
 }
+
+/* ****** ****** */
+/*      TEST     */
+/* ****** ****** */
+//normal
+//sans mot a remplacer
+//vide 
+//sans droit d'acces
+//n'existe pas
+//creation d'un fichier qui existe deja

@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 16:57:59 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/20 16:36:45 by nmattera         ###   ########.fr       */
+/*   Created: 2022/11/20 17:25:58 by nmattera          #+#    #+#             */
+/*   Updated: 2022/11/20 17:55:16 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#ifndef SED_HPP
+# define SED_HPP
 
-# include "Weapon.hpp"
-
-class HumanB
-{
-private:
-	Weapon *_arme;
-	std::string _name;
-	
-public:
-	HumanB();
-	HumanB(std::string name);
-	~HumanB();
-
-	void	attack();
-	void	setWeapon(Weapon &weapon);
-};
+# include <iostream>
+# include <fstream>
+# include <string>
 
 #endif
