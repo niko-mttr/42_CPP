@@ -1,14 +1,16 @@
-NAME	= reference
+NAME	= Final
 
 #COMPILATION
-CC		= g++
+CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
 #INCLUDES
 INC		= includes/
 
 #SRC
-SRC		= main.cpp\
+SRC		=	main.cpp\
+			Weapon.cpp\
+			HumanA.cpp\
 
 #OBJETS
 OBJ		= $(SRC:%.cpp=%.o)
@@ -18,7 +20,7 @@ OBJ		= $(SRC:%.cpp=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) $^ -o $@
 
 $(OBJ): $(SRC)
 	$(CC) $(CFLAGS) -c $^

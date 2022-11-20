@@ -3,28 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 16:57:48 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/18 17:44:39 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/20 13:16:56 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(Weapon arme)
+HumanA::HumanA(Weapon &arme) : _arme(arme), _name("leo")
 {
-	//if arme ??
-	_arme = arme;
-	_name = "leo";
 }
 
-HumanA::HumanA(Weapon arme, std::string name)
+HumanA::HumanA(std::string name, Weapon &arme) : _arme(arme), _name(name)
 {
-	_arme = arme;
-	_name = name;
 }
 
 HumanA::~HumanA()
 {
+}
+
+
+void	HumanA::attack(void)
+{
+	std::cout << _name << " attacks with their " << _arme.getType() << std::endl;
 }

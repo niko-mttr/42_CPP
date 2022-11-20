@@ -3,13 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 16:56:50 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/18 17:20:10 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/20 13:15:15 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 #include <iostream>
 #include <string>
 
@@ -18,8 +21,11 @@ class Weapon
 private:
 	std::string _type;
 public:
-	Weapon(/* args */);
+	Weapon();
+	Weapon(std::string type);
 	~Weapon();
 	const std::string &getType();
-	void getType(std::string nouveau);
+	void setType(std::string type);
 };
+
+#endif
