@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 17:25:58 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/20 17:55:16 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/21 16:25:46 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@
 # include <iostream>
 # include <fstream>
 # include <string>
+# include <string.h>
 
 #endif
