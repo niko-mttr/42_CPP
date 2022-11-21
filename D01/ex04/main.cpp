@@ -3,52 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 17:25:28 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/21 19:01:08 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/21 22:40:30 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sed.hpp"
 
-std::string ft_action(std::string save, std::string s1, std::string s2, int start)
-{
-	
-	start -= s1.length();
-	for(int i = 0; s2[i]; i++)
-	{
-		save[start] = s2[i];
-		start++;
-	}
-	return (save);
-}
-
 std::string ft_replace(std::string save, std::string s1, std::string s2)
 {
-	std::string nouveau;
 	int i = 0;
+	int mark = 0;
 	int counter = 0;
 
 	while (save[i])
 	{
 		counter = 0;
+		mark = 0;
 		while (save[i] == s1[counter])
 		{
+			if (counter == (int)(s1.length()) -1)
+			{
+				mark = 1;
 				break ;
+			}
 			i++;
 			counter++;
 		}
 		i -= counter; 
-		if (counter == (int)(s1.length() - 1))
+		if (mark)
 		{
-			ft_action(save, s1, s2, i);
+			save.erase(i, ++counter);
+			save.insert(i, s2);
 			i += s2.length();
 		}
-		nouveau[i] = save[i];
 		i++;
 	}
-	return (nouveau);
+	return (save);
 }
 
 void	ft_cpy(char *file, char *out, std::string s1, std::string s2)
@@ -57,14 +50,13 @@ void	ft_cpy(char *file, char *out, std::string s1, std::string s2)
     std::ofstream out_file(out);
     std::string save;
 
-	
     in_file.open(file);
 
     if(in_file.is_open() && out_file)
     {
         while(getline(in_file, save))
 		{
-			if (!save.find(s1, 0))
+			if (!save.find_first_of(s1, 0))
             	out_file << ft_replace(save, s1, s2) << std::endl;
 			else
             	out_file << save << std::endl;
@@ -72,9 +64,7 @@ void	ft_cpy(char *file, char *out, std::string s1, std::string s2)
 		in_file.close();
     }
     else
-	{
         std::cout << "Unable to open the file!" << std::endl;
-	}
 	out_file.close();
 }
 
