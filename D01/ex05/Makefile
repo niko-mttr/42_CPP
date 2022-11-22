@@ -1,45 +1,37 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: jcalon <jcalon@student.42.fr>              +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/09 16:52:15 by jcalon            #+#    #+#              #
-#    Updated: 2022/09/07 12:03:49 by jcalon           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME	= Harl
 
-NAME	= harl
+#COMPILATION
+CC		= c++
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-SRCS 	= main.cpp Harl.cpp
+#INCLUDES
+INC		= includes/
 
-OBJS 	= ${SRCS:.cpp=.o}
+#SRC
+SRC		=	main.cpp\
+			Harl.cpp\
 
-DEP		= ${SRCS:.cpp=.d}
+#OBJETS
+OBJ		= $(SRC:%.cpp=%.o)
 
-CXX 		= c++
-CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98 -MMD
 
-.cpp.o:
-		${CXX} ${CXXFLAGS} -c -o $@ $<
+#COMMANDES
+all: $(NAME)
 
-all: 	${NAME}
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $^ -o $@
 
-${NAME}: Makefile ${OBJS} 
-		$(CXX) $(CXXFLAGS) ${OBJS} -o ${NAME}
-		@echo "\nCompiled!\n"
-
--include $(DEP)
+$(OBJ): $(SRC)
+	$(CC) $(CFLAGS) -c $^
 
 clean:
-		rm -f ${OBJS}
-		rm -f ${DEP}
+	@rm -rf $(OBJ)
+	@echo "$(OBJ) DELETED"
 
 fclean: clean
-		rm -f $(NAME)
-		@echo "\nEverything deleted!\n"
+	@rm -rf $(NAME)
+	@echo "$(NAME) DELETED"
 
-re:		fclean all
+re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all re clean fclean

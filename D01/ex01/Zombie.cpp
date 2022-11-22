@@ -6,30 +6,29 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 19:15:13 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/18 15:00:47 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/22 17:45:15 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-using namespace std;
 
 Zombie::Zombie()
 {
 	
 }
 
-Zombie::Zombie(string name)
+Zombie::Zombie(std::string name)
 {
 	_name = name;
 }
 
 Zombie::~Zombie()
 {
-	
+	std::cout << _name << " : destructor called" << std::endl;
 }
 
 void	Zombie::announce()
 {
-	cout << _name << ": BraiiiiiiinnnzzzZ..." << endl;
+	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

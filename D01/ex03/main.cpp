@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 13:08:37 by nicolasmatt       #+#    #+#             */
-/*   Updated: 2022/11/20 16:37:01 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:01:06 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int	main()
+int main()
 {
 	{
 		Weapon club = Weapon("crude spiked club");
-
 		HumanA bob("Bob", club);
 		bob.attack();
 		club.setType("some other type of club");
@@ -26,18 +25,11 @@ int	main()
 	}
 	{
 		Weapon club = Weapon("crude spiked club");
-
 		HumanB jim("Jim");
 		jim.setWeapon(club);
 		jim.attack();
 		club.setType("some other type of club");
 		jim.attack();
 	}
-	{
-		Weapon club = Weapon("crude spiked club");
-
-		HumanB jack("Jack");
-		jack.attack();
-	}
-return 0;
+	return 0;
 }

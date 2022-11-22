@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:06:31 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/22 15:46:57 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:06:06 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ std::string ft_replace(std::string save, std::string s1, std::string s2)
 		{
 			save.erase(i, ++counter);
 			save.insert(i, s2);
-			i += s2.length();
+			i += s2.length() - 1;
 		}
 		i++;
 	}
