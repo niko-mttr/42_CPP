@@ -8,7 +8,7 @@ CFLAGS	= -Wall -Werror -Wextra -std=c++98
 INC		= includes/
 
 #SRC
-SRC		=	main.cpp\
+SRC		=	main.cpp sed.cpp
 
 #OBJETS
 OBJ		= $(SRC:%.cpp=%.o)
