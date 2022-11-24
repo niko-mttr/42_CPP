@@ -6,8 +6,14 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:35:05 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/23 20:12:19 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/24 18:29:11 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#icnlude "fixed.hpp"
+// #include "fixed.hpp"
+#include <iostream>
+
+int main()
+{
+    std::cout << "etsst" << std::endl;
+}
