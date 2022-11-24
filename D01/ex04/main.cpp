@@ -22,8 +22,6 @@ int main(int ac, char **av)
 	}
 	
 	string_out = (std::string)av[1] + ".replace";
-	char *out = new char [string_out.length() + 1];
-	strcpy(out, string_out.c_str());
+	char *out = (char *)string_out.c_str(); 
 	ft_cpy(av[1], out, av[2], av[3]);
-	delete []out;
 }

@@ -14,6 +14,7 @@
 
 Weapon::Weapon(void)
 {
+	_type = "default";
 }
 
 Weapon::Weapon(std::string type)

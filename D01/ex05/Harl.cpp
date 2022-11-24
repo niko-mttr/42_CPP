@@ -43,12 +43,12 @@ void	Harl::error( void )
 	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
-void Harl::complain( std::string level )
+void Harl::complain( std::string ask )
 {
-	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void (Harl::*ptr[4])(void) = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
+	std::string message[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void (Harl::*ptr[4])() = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
 	for(int i = 0; i <= 3; i++)
-		if (levels[i] == level)
+		if (message[i] == ask)
 			(this->*ptr[i])();
 	
 }

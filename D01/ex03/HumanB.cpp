@@ -19,6 +19,7 @@ HumanB::HumanB() : _name("ben")
 
 HumanB::HumanB(std::string name) : _name(name)
 {
+	_arme = NULL;
 }
 
 HumanB::~HumanB()
@@ -27,7 +28,7 @@ HumanB::~HumanB()
 
 void	HumanB::attack(void)
 {
-	if (_arme)
+	if (_arme != NULL)
 		std::cout << this->_name << " attacks with their " << (*this->_arme).getType() << std::endl;
 	else
 		std::cout << this->_name << " has no weapon to attack... " << std::endl;

@@ -18,6 +18,9 @@ int main()
 	
 	randomChump("Mathias");
 	zombie = newZombie("Arnault");
-	zombie->announce();
+		if (!zombie)
+			std::cout << "error : memory allocation" << std::endl;
+		else
+			zombie->announce();
 	delete zombie;
 }

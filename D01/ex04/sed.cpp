@@ -51,6 +51,11 @@ void	ft_cpy(char *file, char *out, std::string s1, std::string s2)
     std::string save;
 
     in_file.open(file);
+	if (in_file.eof())
+	{
+		std::cout << "Empty file" << std::endl;
+		return ;
+	}
 
     if(in_file.is_open() && out_file)
     {

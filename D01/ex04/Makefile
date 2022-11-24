@@ -19,6 +19,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $^ -o $@
+	touch test
 
 $(OBJ): $(SRC)
 	$(CC) $(CFLAGS) -c $^
@@ -29,6 +30,8 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -rf test
+	@rm -rf test.replace
 	@echo "$(NAME) DELETED"
 
 re: fclean all
