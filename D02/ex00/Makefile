@@ -1,4 +1,4 @@
-NAME	= Horde
+NAME	= Fixed
 
 #COMPILATION
 CC		= c++
