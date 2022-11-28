@@ -1,7 +1,7 @@
 NAME	= megaphone
 
 #COMPILATION
-CC		= g++
+CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
 #INCLUDES
