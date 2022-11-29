@@ -1,49 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.cpp                                          :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:35:33 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/29 14:27:38 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:50:23 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "Fixed.hpp"
 
 Fixed::Fixed () : _raw(0)
 {   
-    std::cout << "Default constructor called" << std::endl;
+    // std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int nb)
 {
-    std::cout << "Int constructor called" << std::endl;
+    // std::cout << "Int constructor called" << std::endl;
     _raw =  nb << _nbBits;
 }
 
 Fixed::Fixed(const float nb)
 {
-    std::cout << "Float  constructor called" << std::endl;
+    // std::cout << "Float  constructor called" << std::endl;
     _raw = roundf(nb * (1 << _nbBits));
 }
 
 
 Fixed::Fixed(const Fixed & src)
 {
-    std::cout << "Copy constructor called"  << std::endl;
+    // std::cout << "Copy constructor called"  << std::endl;
     *this = src;
 }
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
+    // std::cout << "Destructor called" << std::endl;
 }
 
 Fixed & Fixed::operator=(Fixed const & src)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    // std::cout << "Copy assignment operator called" << std::endl;
     this->_raw = src.getRawBits();
     return *this;
 }

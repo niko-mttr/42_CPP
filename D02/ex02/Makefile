@@ -9,7 +9,8 @@ INC		= includes/
 
 #SRC
 SRC		=	main.cpp\
-			Fixed.cpp
+			Fixed.cpp\
+			operation.cpp
 
 #OBJETS
 OBJ		= $(SRC:%.cpp=%.o)
