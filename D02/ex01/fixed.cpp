@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:35:33 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/29 12:50:51 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:27:38 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Fixed::Fixed(const int nb)
 Fixed::Fixed(const float nb)
 {
     std::cout << "Float  constructor called" << std::endl;
-    _raw = round(nb * (1 << _nbBits));
+    _raw = roundf(nb * (1 << _nbBits));
 }
 
 

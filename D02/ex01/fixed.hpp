@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:35:23 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/29 12:41:46 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:27:39 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FIXED_HPP
 
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 class   Fixed {
     private :
