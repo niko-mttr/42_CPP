@@ -6,16 +6,20 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:35:23 by nmattera          #+#    #+#             */
-/*   Updated: 2022/11/25 18:55:52 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/11/29 12:41:46 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FIXED_HPP
+# define FIXED_HPP
+
 #include <iostream>
+#include <math.h>
 
 class   Fixed {
     private :
-        int _rawBits;
-        static const int _bitsFractional;
+        int _raw;
+        static const int _nbBits;
     
     public :
         Fixed();
@@ -30,3 +34,7 @@ class   Fixed {
         float toFloat()const;
         int toInt()const;
 };
+
+std::ostream & operator<<(std::ostream &os, Fixed const & nb);
+
+#endif
