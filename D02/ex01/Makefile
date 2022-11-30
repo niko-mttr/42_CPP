@@ -1,37 +1,40 @@
+#name
 NAME	= Fixed
 
-#COMPILATION
-CC		= c++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98
+#files
+SRCS 	= main.cpp Fixed.cpp
 
-#INCLUDES
-INC		= includes/
+#objects
+OBJS 	= ${SRCS:.cpp=.o}
 
-#SRC
-SRC		=	main.cpp\
-			Fixed.cpp
+#dependances
+DEP		= ${SRCS:.cpp=.d}
 
-#OBJETS
-OBJ		= $(SRC:%.cpp=%.o)
+CXX 		= c++
+CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98
+
+.cpp.o:
+		@${CXX} ${CXXFLAGS} -MMD -c -o $@ $<
+
+all: 	${NAME}
+
+${NAME}: Makefile ${OBJS} 
+		$(CXX) $(CXXFLAGS) -MMD ${OBJS} -o ${NAME}
+		@echo "$(NAME) Compiled!\n"
 
 
-#COMMANDES
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $^ -o $@
-
-$(OBJ): $(SRC)
-	$(CC) $(CFLAGS) -c $^
+-include $(DEP)
 
 clean:
-	@rm -rf $(OBJ)
-	@echo "$(OBJ) DELETED"
+		@rm -f ${OBJS}
+		@rm -f ${DEP}
+		@echo "Dependances and objects deleted\n"
+
 
 fclean: clean
-	@rm -rf $(NAME)
-	@echo "$(NAME) DELETED"
+		@rm -f $(NAME)
+		@echo "Delete $(NAME)\n"
 
-re: fclean all
+re:		fclean all
 
-.PHONY: all re clean fclean
+.PHONY: all clean fclean re
