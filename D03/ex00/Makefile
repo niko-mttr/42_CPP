@@ -8,7 +8,7 @@ CFLAGS	= -Wall -Werror -Wextra -std=c++98 -MMD
 INC		= includes/
 
 #SRC
-SRC		=	main.cpp
+SRC		=	main.cpp ClapTrap.cpp
 
 #OBJETS
 OBJ		= $(SRC:%.cpp=%.o)
@@ -30,7 +30,8 @@ $(OBJ): $(SRC)
 
 clean:
 	@rm -rf $(OBJ)
-	@echo "$(OBJ) DELETED"
+	@rm -rf $(DEPS)
+	@echo "Object and dependance files DELETED"
 
 fclean: clean
 	@rm -rf $(NAME)
