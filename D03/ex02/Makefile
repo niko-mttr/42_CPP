@@ -1,4 +1,4 @@
-NAME	= ScavTrap
+NAME	= FragTrap
 
 #COMPILATION
 CC		= c++
@@ -8,7 +8,7 @@ CFLAGS	= -Wall -Werror -Wextra -std=c++98 -MMD
 INC		= includes/
 
 #SRC
-SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp
+SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 #OBJETS
 OBJ		= $(SRC:%.cpp=%.o)
