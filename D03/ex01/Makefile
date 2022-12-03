@@ -8,7 +8,7 @@ CFLAGS	= -Wall -Werror -Wextra -std=c++98 -MMD
 INC		= includes/
 
 #SRC
-SRC		=	main.cpp ClapTrap.cpp
+SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp
 
 #OBJETS
 OBJ		= $(SRC:%.cpp=%.o)

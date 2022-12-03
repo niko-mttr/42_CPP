@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 19:05:09 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/02 16:14:08 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/03 17:11:10 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << _name << " can't repaired..." << std::endl;
         return ; 
     }
-    std::cout << "ClapTrap " << _name << " repairs and gains " << amount << " hit points !" << std::endl;
-    _energy--;
     _hit += amount;
+    _energy--;
+    std::cout << "ClapTrap " << _name << " repairs and gains " << amount << " hit points ! hit points left : " << _hit << std::endl;
 }
 
 void ClapTrap::setName(const std::string name)

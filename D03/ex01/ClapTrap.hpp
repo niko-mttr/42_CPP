@@ -6,9 +6,12 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:34:48 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/02 13:45:27 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/03 15:58:54 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
 
@@ -41,3 +44,5 @@ class ClapTrap
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 };
+
+#endif

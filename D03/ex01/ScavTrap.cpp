@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 14:19:59 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/02 16:36:30 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/03 17:14:35 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,12 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &src)
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap : Destructor called for " << this->getName() << std::endl;
+}
+
+void ScavTrap::guardGate()
+{
+    if (this->getHit() > 0)
+        std::cout << "ScavTrap : " << this->getName() << " is now entered in Gate keeper mode" << std::endl;
+    else
+        std::cout << "ScavTrap : " << this->getName() << " is now entered in Gate keeper mode... despite there is no more Hit points left" << std::endl;
 }
