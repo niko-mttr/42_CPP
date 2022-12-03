@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:32:19 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/03 17:12:52 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/03 18:12:27 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void scavtrapTest()
     std::cout << std::endl << std::endl;
     std::cout << "*** TEST SCAVTRAP ***" << std::endl;
     ScavTrap scavtrap("test 2");
+    std::cout << scavtrap << std::endl;
     scavtrap.attack("first target");
     scavtrap.takeDamage(10);
     scavtrap.beRepaired(10);
@@ -39,10 +40,8 @@ void constructorTest()
 {
     std::cout << std::endl << std::endl;
     std::cout << "*** TEST CONSTRUTOR ***" << std::endl;
-    ClapTrap claptrap("Action");
     ScavTrap scavtrap("Test");
 
-    (void)claptrap;
     (void)scavtrap;
 }
 

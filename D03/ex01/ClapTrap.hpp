@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:34:48 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/03 15:58:54 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/03 18:06:59 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@ class ClapTrap
         int getHit()const;
         int getDamage()const;
 
-        void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
+        void attack(const std::string& target);
 };
+
 
 #endif
