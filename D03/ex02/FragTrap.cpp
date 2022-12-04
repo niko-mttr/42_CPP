@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 18:19:53 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/03 18:50:48 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/04 10:22:08 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys()
 {
-    std::cout << "Hi mate ! Give me five !" << std::endl;
+    std::cout << this->getName() << " : Hi mate ! Give me five !" << std::endl;
 }
 
 std::ostream & operator<<(std::ostream &o, const FragTrap &src)
