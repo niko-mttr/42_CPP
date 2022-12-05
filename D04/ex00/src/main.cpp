@@ -6,7 +6,7 @@
 /*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:32:19 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/05 10:28:31 by nicolasmatt      ###   ########.fr       */
+/*   Updated: 2022/12/05 10:47:29 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,13 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-void testCat()
+void testDestructor()
 {
-    std::cout << std::endl << std::endl;
-    std::cout << "*** TEST CAT ***" << std::endl;
-    Cat Cat;
+    std::cout << std::endl << std::endl << "*** TEST DESTRUCTOR ***" << std::endl;
+    WrongAnimal *test = new WrongCat();
+    // WrongCat lol;
+    delete test;
 }
-
-void testDog()
-{
-    std::cout << std::endl << std::endl;
-    std::cout << "*** TEST DOG ***" << std::endl;
-    Dog Dog;
-}
-
-void testAnimal()
-{
-    std::cout << "*** TEST ANIMAL ***" << std::endl;
-    Animal animal;
-}
-
-// int main()
-// {
-//     testAnimal();
-//     testDog();
-//     testCat();
-// }
 
 void testFake()
 {   
@@ -87,4 +68,5 @@ int main()
 {
     testReal();
     testFake();
+    testDestructor();
 }

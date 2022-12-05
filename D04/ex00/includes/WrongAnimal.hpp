@@ -6,7 +6,7 @@
 /*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:26:23 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/05 10:07:44 by nicolasmatt      ###   ########.fr       */
+/*   Updated: 2022/12/05 10:46:55 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class WrongAnimal
         WrongAnimal();
         WrongAnimal(const WrongAnimal &src);
         WrongAnimal & operator=(const WrongAnimal &src);
-        ~WrongAnimal();
+        virtual ~WrongAnimal();
         
         std::string getType(void) const;
         
