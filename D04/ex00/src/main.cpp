@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:32:19 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/04 18:29:12 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/05 10:28:31 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,48 @@ void testAnimal()
 //     testCat();
 // }
 
-int main()
-{
+void testFake()
+{   
+    std::cout << std::endl << std::endl << "*** TEST SANS VIRTUAL ***" << std::endl;
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const WrongAnimal* i = new WrongCat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
+    std::cout << std::endl;
+    std::cout << meta->getType() << " : ";
+    meta->makeSound(); 
+    std::cout << j->getType() << " : ";
+    j->makeSound(); 
+    std::cout << i->getType() << " : ";
+    i->makeSound();
     
+    std::cout << std::endl << "[Destructeurs]" << std::endl;
     delete meta;
+    delete j;
     delete i;
-    return 0;
+}
+
+void testReal()
+{
+    std::cout << "*** TEST AVEC VIRTUAL ***" << std::endl;
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    std::cout << std::endl;
+    std::cout << meta->getType() << " : ";
+    meta->makeSound(); 
+    std::cout << j->getType() << " : ";
+    j->makeSound(); 
+    std::cout << i->getType() << " : ";
+    i->makeSound();
+
+    std::cout << std::endl << "[Destructeurs]" << std::endl;
+    delete meta;
+    delete j;
+    delete i;
+}
+
+int main()
+{
+    testReal();
+    testFake();
 }

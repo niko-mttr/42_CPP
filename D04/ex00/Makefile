@@ -5,7 +5,7 @@ CC			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -std=c++98 -I includes -MMD
 
 #SRC
-SRC			=	main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC			=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 SRC_PATH	=	src/
 SRCS		=	$(addprefix $(SRC_PATH), $(SRC))
 
