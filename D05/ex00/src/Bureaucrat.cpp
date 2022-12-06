@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 18:08:31 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/06 14:54:14 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/06 15:36:29 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ Bureaucrat::Bureaucrat(std::string nameGive, int gradeGive)
     {
         if (this->grade > 150)
         {
-            std::cout << "je passe bien dans mon exception" << std::endl;
             throw Bureaucrat::GradeTooLowException();
         }
     }
