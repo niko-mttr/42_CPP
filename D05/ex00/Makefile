@@ -1,4 +1,4 @@
-NAME	= Poly
+NAME	= Bureaucrat
 
 #COMPILATION
 CC			=	c++

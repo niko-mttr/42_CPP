@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 18:08:31 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/05 18:28:56 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/06 12:04:51 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::Bureaucrat(std::string nameGive, int gradeGive)
 {
     std::cout << "New Bureaucrat..." << std::endl;
-    if (gradeGive > 150 || gradeGive < 1)
+    if (gradeGive > 150)
+        throw Bureaucrat::GradeTooLowException();
+    if (gradeGive < 1)
     {
         std::cout << "Wrong grade... standard grade given : 50" << std::endl;
         this->grade = 50;
@@ -38,7 +40,7 @@ Bureaucrat::Bureaucrat(std::string nameGive, int gradeGive)
         this->name = nameGive;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &src)
+Bureaucrat::Bureaucrat(const Bureaucrat &src): name(src.getName())
 {
     std::cout << "New Bureaucrat..." << std::endl;
     *this = src;
@@ -46,9 +48,9 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src)
 
 Bureaucrat & Bureaucrat::operator=(const Bureaucrat &src)
 {
-    this->name = src.name;
     this->grade = src.grade;
     std::cout << "Cpy Bureaucrat..." << std::endl;
+    return *this;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -68,10 +70,40 @@ int Bureaucrat::getGrade()const
 
 void Bureaucrat::upGrade()
 {
-    
+    this->grade--;
+    try
+    {
+        if (grade < 1)
+            throw Bureaucrat::GradeTooHighException();
+    }
+    catch(const std::exception& e)
+    {
+        this->grade++;
+        std::cerr << e.what() << '\n';
+    }
 }
 
 void Bureaucrat::lowGrade()
 {
+    this->grade++;
+    try
+    {
+        if (grade > 150)
+        {
+            std::cout << "je passe bien dans mon exception" << std::endl;
+            Bureaucrat::GradeTooLowException();
+        }
+    }
+    catch(const std::exception& e)
+    {
+        this->grade--;
+        std::cerr << e.what() << '\n';
+    }
     
+}
+
+std::ostream & operator<<(std::ostream &o, const Bureaucrat &src)
+{
+    o << src.getName() << ", Bureaucrat grade " << src.getGrade();
+    return o;
 }
