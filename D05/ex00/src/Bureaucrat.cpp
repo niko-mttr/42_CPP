@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
+/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 18:08:31 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/06 12:04:51 by nicolasmatt      ###   ########.fr       */
+/*   Updated: 2022/12/06 14:54:14 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,30 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::Bureaucrat(std::string nameGive, int gradeGive)
 {
     std::cout << "New Bureaucrat..." << std::endl;
-    if (gradeGive > 150)
-        throw Bureaucrat::GradeTooLowException();
-    if (gradeGive < 1)
+    this->grade = gradeGive;
+    try
     {
-        std::cout << "Wrong grade... standard grade given : 50" << std::endl;
-        this->grade = 50;
+        if (this->grade < 1)
+            throw Bureaucrat::GradeTooHighException();
     }
-    else
-        this->grade = gradeGive;
+    catch(const std::exception& e)
+    {
+        this->grade = 1;
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        if (this->grade > 150)
+        {
+            std::cout << "je passe bien dans mon exception" << std::endl;
+            throw Bureaucrat::GradeTooLowException();
+        }
+    }
+    catch(const std::exception& e)
+    {
+        this->grade = 150;
+        std::cerr << e.what() << '\n';
+    }
     if (!nameGive.length())
     {
         std::cout << "Wrong name... standard name given : Philou" << std::endl;
@@ -90,8 +105,7 @@ void Bureaucrat::lowGrade()
     {
         if (grade > 150)
         {
-            std::cout << "je passe bien dans mon exception" << std::endl;
-            Bureaucrat::GradeTooLowException();
+            throw Bureaucrat::GradeTooLowException();
         }
     }
     catch(const std::exception& e)
