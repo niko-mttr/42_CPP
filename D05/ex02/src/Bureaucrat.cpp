@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 18:08:31 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/06 18:54:03 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/07 12:19:58 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void Bureaucrat::lowGrade()
     }
 }
 
-void Bureaucrat::signForm(const Form &form)
+void Bureaucrat::signForm(const AForm &form)
 {
     if (form.getIsSigned() == true)
         std::cout << *this << " signed " << form << std::endl;

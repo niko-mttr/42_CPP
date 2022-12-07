@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:28:56 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/06 18:46:58 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:30:01 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,12 +131,12 @@ void Form::beSigned(Bureaucrat &src)
     {
         if (this->gradeToSign < src.getGrade())
         {
-            throw Form::GradeTooHighException();
+            throw Form::GradeTooLowException();
         }
     }
     catch(const std::exception& e)
     {
-        isSigned = 0;
+        isSigned = false;
         std::cerr << e.what() << '\n';
     }
     src.signForm(*this);

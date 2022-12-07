@@ -6,7 +6,7 @@
 /*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 10:51:11 by nicolasmatt       #+#    #+#             */
-/*   Updated: 2022/12/07 10:52:40 by nicolasmatt      ###   ########.fr       */
+/*   Updated: 2022/12/07 12:25:51 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ class PresidentialPardonForm : public AForm
         PresidentialPardonForm & operator=(const PresidentialPardonForm &src);
         ~PresidentialPardonForm();
 
-        bool execute(const Bureaucrat &executor);
+        bool execute(const Bureaucrat &executor)const;
         std::string getTarget() const;
 };
+
+std::ostream & operator<<(std::ostream &o, const PresidentialPardonForm &i);
 
 #endif

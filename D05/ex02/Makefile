@@ -5,7 +5,7 @@ CC			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -std=c++98 -I includes -MMD
 
 #SRC
-SRC			=	main.cpp Bureaucrat.cpp Form.cpp
+SRC			=	main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp
 SRC_PATH	=	src/
 SRCS		=	$(addprefix $(SRC_PATH), $(SRC))
 

@@ -6,83 +6,21 @@
 /*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:28:56 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/07 10:08:23 by nicolasmatt      ###   ########.fr       */
+/*   Updated: 2022/12/07 12:32:15 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-AForm::AForm()
+AForm::AForm() : name("Default"), isSigned(0), gradeToSign(150), gradeToExecute(100)
 {
     std::cout << "New Form..." << std::endl;
-    this->name = "Circulaire du Perrigord";
-    this->isSigned = 0;
-    this->gradeToSign = 20;
-    this->gradeToExecute = 10;
 }
 
-AForm::AForm(std::string nameGive, int gradeToSignGive, int gradeToExecuteGive)
+AForm::AForm(std::string nameGive, int gradeToSignGive, int gradeToExecuteGive) : name(nameGive), isSigned(false), gradeToSign(gradeToSignGive), gradeToExecute(gradeToExecuteGive)
 {
-    std::cout << "New Form..." << std::endl;
-    
-    /* VERIFICATION DE GRADE TO SIGN*/
-    this->gradeToSign = gradeToSignGive;
-    try
-    {
-        if (this->gradeToSign < 1)
-            throw AForm::GradeTooHighException();
-    }
-    catch(const std::exception& e)
-    {
-        this->gradeToSign = 1;
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        if (this->gradeToSign > 150)
-        {
-            throw AForm::GradeTooLowException();
-        }
-    }
-    catch(const std::exception& e)
-    {
-        this->gradeToSign = 150;
-        std::cerr << e.what() << '\n';
-    }
-
-    /* VERIFICATION DE GRADE TO EXECUTE*/
-    this->gradeToExecute = gradeToExecuteGive;
-    try
-    {
-        if (this->gradeToExecute < 1)
-            throw AForm::GradeTooHighException();
-    }
-    catch(const std::exception& e)
-    {
-        this->gradeToExecute = 1;
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        if (this->gradeToExecute > 150)
-        {
-            throw AForm::GradeTooLowException();
-        }
-    }
-    catch(const std::exception& e)
-    {
-        this->gradeToExecute = 150;
-        std::cerr << e.what() << '\n';
-    }
-    
-    if (!nameGive.length())
-    {
-        std::cout << "Wrong name... standard name given : Decret anonyme" << std::endl;
-        this->name = "Decret anonyme";
-    }
-    else
-        this->name = nameGive;
+    std::cout << "New Form... " << std::endl;
 }
 
 AForm::AForm(const AForm &src): name(src.getName())
@@ -131,7 +69,7 @@ void AForm::beSigned(Bureaucrat &src)
     {
         if (this->gradeToSign < src.getGrade())
         {
-            throw AForm::GradeTooHighException();
+            throw AForm::GradeTooLowException();
         }
     }
     catch(const std::exception& e)
@@ -143,9 +81,34 @@ void AForm::beSigned(Bureaucrat &src)
 }
 
 
+bool AForm::execute(const Bureaucrat &executor) const
+{
+    try
+    {
+        if (this->gradeToExecute < executor.getGrade())
+            throw AForm::GradeTooLowException();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        return false;
+    }
+    try
+    {
+        if (this->isSigned == false)
+            throw AForm::FormNotSigned();
+    }
+    catch(const std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+        return false;
+    }
+    return true;
+}
+
 
 std::ostream & operator<<(std::ostream &o, const AForm &src)
 {
-    o << src.getName() << " -> grade to sign : " << src.getGradeToSign() << " | grade to execute : " << src.getGradeToExecute();
+    o << src.getName() << " -> grades (to sign : " << src.getGradeToSign() << " | to execute : " << src.getGradeToExecute() << ") -> is signed : " << src.getIsSigned();
     return o;
 }
