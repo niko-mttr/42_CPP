@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 18:08:31 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/06 18:54:03 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:37:18 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void Bureaucrat::lowGrade()
     }
 }
 
-void Bureaucrat::signForm(const Form &form)
+void Bureaucrat::signForm(Form &form)
 {
     if (form.getIsSigned() == true)
         std::cout << *this << " signed " << form << std::endl;

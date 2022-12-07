@@ -2,7 +2,7 @@ NAME	= Bureaucrat
 
 #COMPILATION
 CC			=	c++
-CFLAGS		=	-Wall -Werror -Wextra -std=c++98 -I includes -MMD
+CFLAGS		=	-Wall -Werror -Wextra -std=c++98 -I includes -MMD -g
 
 #SRC
 SRC			=	main.cpp Bureaucrat.cpp Form.cpp

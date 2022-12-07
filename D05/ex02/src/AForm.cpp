@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
+/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:28:56 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/07 12:32:15 by nicolasmatt      ###   ########.fr       */
+/*   Updated: 2022/12/07 16:14:47 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

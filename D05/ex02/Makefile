@@ -5,7 +5,14 @@ CC			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -std=c++98 -I includes -MMD
 
 #SRC
-SRC			=	main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp
+SRC			=	main.cpp\
+				Bureaucrat.cpp\
+				AForm.cpp\
+				PresidentialPardonForm.cpp\
+				RobotomyRequestForm.cpp\
+				ShrubberyCreationForm.cpp
+
+
 SRC_PATH	=	src/
 SRCS		=	$(addprefix $(SRC_PATH), $(SRC))
 
@@ -36,6 +43,7 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -rf *_shrubbery
 	@echo "$(NAME) DELETED"
 
 re: fclean all

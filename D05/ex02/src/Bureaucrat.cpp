@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
+/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 18:08:31 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/07 12:19:58 by nicolasmatt      ###   ########.fr       */
+/*   Updated: 2022/12/07 17:51:30 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 Bureaucrat::Bureaucrat()
 {
-    std::cout << "New Bureaucrat..." << std::endl;
     this->name = "Didou";
     this->grade = 3;
+    std::cout << "New Bureaucrat..." << *this << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string nameGive, int gradeGive)
 {
-    std::cout << "New Bureaucrat..." << std::endl;
     this->grade = gradeGive;
     try
     {
@@ -53,12 +52,13 @@ Bureaucrat::Bureaucrat(std::string nameGive, int gradeGive)
     }
     else
         this->name = nameGive;
+    std::cout << "New Bureaucrat..." << *this << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src): name(src.getName())
 {
-    std::cout << "New Bureaucrat..." << std::endl;
     *this = src;
+    std::cout << "New Bureaucrat..." << *this << std::endl;
 }
 
 Bureaucrat & Bureaucrat::operator=(const Bureaucrat &src)
@@ -115,12 +115,20 @@ void Bureaucrat::lowGrade()
     }
 }
 
-void Bureaucrat::signForm(const AForm &form)
+void Bureaucrat::signForm(AForm &form)
 {
     if (form.getIsSigned() == true)
         std::cout << *this << " signed " << form << std::endl;
     else
         std::cout << *this << " couldn't signed " << form << std::endl;
+}
+
+void Bureaucrat::executeForm(const AForm &form)
+{
+    if (form.execute(*this) == true)
+        std::cout << *this << " executed " << form << std::endl;
+    else
+        std::cout << *this << "can't execute " << form << std::endl;
 }
 
 std::ostream & operator<<(std::ostream &o, const Bureaucrat &src)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
+/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 10:20:50 by nicolasmatt       #+#    #+#             */
-/*   Updated: 2022/12/07 10:45:23 by nicolasmatt      ###   ########.fr       */
+/*   Updated: 2022/12/07 15:55:32 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include <cstdlib>
+#include <ctime>
 
 class RobotomyRequestForm : public AForm
 {
@@ -28,7 +30,7 @@ class RobotomyRequestForm : public AForm
         RobotomyRequestForm & operator=(const RobotomyRequestForm &src);
         ~RobotomyRequestForm();
 
-        bool execute(const Bureaucrat &executor);
+        bool execute(const Bureaucrat &executor)const;
         std::string getTarget() const;
 };
 

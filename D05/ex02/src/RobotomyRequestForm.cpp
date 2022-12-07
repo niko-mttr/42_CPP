@@ -1,59 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 11:39:59 by nicolasmatt       #+#    #+#             */
-/*   Updated: 2022/12/07 17:51:58 by nmattera         ###   ########.fr       */
+/*   Created: 2022/12/07 15:41:45 by nmattera          #+#    #+#             */
+/*   Updated: 2022/12/07 17:51:51 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon", 25, 5), _target("Default")
+RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request", 72, 45), _target("Default")
 {
     std::cout << "New " << *this << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Presidential Pardon", 25, 5), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("Robotomy Request", 72, 45), _target(target)
 {
     std::cout << "New " << *this << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & src) : AForm(src)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & src) : AForm(src)
 {
     this->_target = src.getTarget();
     std::cout << "New " << *this << std::endl;
 }
-PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm &src)
+RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &src)
 {
     this->_target = src.getTarget();
     return *this;
 }
 
-PresidentialPardonForm::~PresidentialPardonForm()
+RobotomyRequestForm::~RobotomyRequestForm()
 {
     std::cout << "Delete " << *this << std::endl;
 }
 
-bool	PresidentialPardonForm::execute(const Bureaucrat &executor) const
+bool	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	if (AForm::execute(executor))
+	if (AForm::execute(executor) == true)
 	{
-		std::cout << this->_target << " was forgiven for his sins !" << std::endl;
+		std::srand((unsigned int)time(NULL));
+		if (rand() % 2)
+			std::cout << "BZZZZ BZZZZZ " << this->_target << " has been robotomized successfully !" << std::endl;
+		else	
+			std::cout << "The " << this->_target << " robotomization failed..." << std::endl;
 		return (true);
 	}
 	return (false);
 }
 
-std::string PresidentialPardonForm::getTarget()const
+std::string RobotomyRequestForm::getTarget()const
 {
     return this->_target;
 }
 
-std::ostream & operator<<(std::ostream &o, const PresidentialPardonForm &i)
+std::ostream & operator<<(std::ostream &o, const RobotomyRequestForm &i)
 {
     o << i.getName() << " -> grades (to sign : " << i.getGradeToSign() << " | to execute : " << i.getGradeToExecute() << ") -> target : " << i.getTarget() << " -> is signed : " << i.getIsSigned();
     return o;

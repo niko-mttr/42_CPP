@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:54:47 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/06 17:54:52 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:14:13 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Bureaucrat
         void upGrade();
         void lowGrade();
 
-        virtual void signForm(const Form &form);
+        virtual void signForm(Form &form);
 
     class GradeTooHighException : public std::exception
     {
