@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 18:21:43 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/07 21:30:05 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/07 22:02:22 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "AForm.hpp"
-// #include <string>
-// #include <new>
 
 class Intern
 {
