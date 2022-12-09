@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:18:15 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/09 19:49:51 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/10 00:41:27 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cctype>
 #include <cmath>
 #include <limits>
 #include <string>
@@ -24,8 +25,8 @@
 
 class Convert{
     private :
-        int _type;
         std::string _str;
+        int _type;
     
     public:
         Convert();
@@ -39,7 +40,7 @@ class Convert{
         
 
         void checkInput();
-        bool chechChar();
+        bool checkChar();
         bool checkInt();
         bool checkDouble();
         bool checkFloat();
@@ -74,7 +75,7 @@ class Convert{
         public :
             virtual const char* what() const throw()
             {
-                return ("none displayable");
+                return ("Non displayable");
             }        
     };
 };

@@ -1,4 +1,4 @@
-NAME	= cast
+NAME	= Convert
 
 #COMPILATION
 CC			=	c++
