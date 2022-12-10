@@ -6,7 +6,7 @@
 /*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:27:34 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/10 00:40:35 by nicolasmatt      ###   ########.fr       */
+/*   Updated: 2022/12/10 09:52:06 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,9 +168,6 @@ char Convert::convertChar()
             throw ImpossibleException();
         if(std::isinf(nbr) || std::isnan(nbr))
 			throw ImpossibleException();
-//EXPLIQUER
-//LA LIGNE EN DESSOUS
-// vvvvvvvvvvvvvvvvvv
         if (!isprint(static_cast<char>(nbr)) || (isdigit(this->getString().length() == 1 && static_cast<char>(nbr))))
             throw NotDisplayableException();
     }
