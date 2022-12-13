@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
+/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 10:33:55 by nicolasmatt       #+#    #+#             */
-/*   Updated: 2022/12/10 10:55:43 by nicolasmatt      ###   ########.fr       */
+/*   Updated: 2022/12/10 13:08:55 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Base
 {
     public :
-        virtual ~Base();
+        virtual ~Base(){}
 };
 
 class A : public Base
@@ -38,6 +38,5 @@ class C : public Base
     
 };
 
-
-
+void test();
 #endif

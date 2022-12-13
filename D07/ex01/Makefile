@@ -1,4 +1,4 @@
-NAME	= Convert
+NAME		=	iter
 
 #COMPILATION
 CC			=	c++
