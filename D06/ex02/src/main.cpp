@@ -6,7 +6,7 @@
 /*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 10:33:25 by nicolasmatt       #+#    #+#             */
-/*   Updated: 2022/12/10 14:57:10 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:45:07 by nmattera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void identify(Base& p)
     {
         A &a = dynamic_cast<A &>(p);
         std::cout << "A" << std::endl;
-        static_cast<void>(a);
+        // static_cast<void>(a);
     }
     catch(std::exception &e)
     {
@@ -58,7 +58,7 @@ void identify(Base& p)
     {
         B &b = dynamic_cast<B &>(p);
         std::cout << "B" << std::endl;
-        static_cast<void>(b);
+        // static_cast<void>(b);
     }
     catch(const std::exception& e)
     {
@@ -68,7 +68,7 @@ void identify(Base& p)
     {
         C &c = dynamic_cast<C &>(p);
         std::cout << "C" << std::endl;
-        static_cast<void>(c);
+        // static_cast<void>(c);
     }
     catch(const std::exception& e)
     {
