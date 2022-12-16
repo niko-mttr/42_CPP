@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:42:23 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/16 18:42:13 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/16 23:48:56 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <climits>
+#include <cmath>
 
 class Span
 {
@@ -31,9 +33,10 @@ class Span
         ~Span();
 
         void addNumber(int nbr);
+        void addNumber(std::vector<int>::iterator first, std::vector<int>::iterator last);
         //utiliser la plage d'iterateurs pour eviter de repeter les appeks a addNumber
         int shortestSpan();
-        int longestSapn();
+        int longestSpan();
 
         void printVector() const;
         int operator[](int i) const;

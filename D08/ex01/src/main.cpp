@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:32:19 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/16 18:42:12 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/17 00:02:47 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 int main()
 {
     Span test(3);
-    test.addNumber(4);
-    test.addNumber(3);
-    
-    std::cout << "size : " << test.getN() << " | number : " << test.getNumber(2) << " | operateur : " << test[1] << std::endl;
+    test.addNumber(1);
+    std::vector<int> base (2, 10);
+    test.addNumber(base.begin(), base.end());
+
+    std::cout << "vector : ";
+    test.printVector();
 }
 

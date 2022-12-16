@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmattera <nmattera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolasmattera <nicolasmattera@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:32:56 by nmattera          #+#    #+#             */
-/*   Updated: 2022/12/16 18:32:37 by nmattera         ###   ########.fr       */
+/*   Updated: 2022/12/17 00:00:37 by nicolasmatt      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,53 @@ void Span::addNumber(int nbr)
     catch(const std::exception &e)
     {
         std::cout << e.what() << std::endl;
+    }   
+}
+
+void Span::addNumber(std::vector<int>::iterator first, std::vector<int>::iterator last)
+{   
+    try
+    {
+        while (first != last)
+        {
+            if (this->_vector.size() == this->_N)
+                throw FullException();
+            this->_vector.push_back(*first);
+            first++;
+        }
     }
+    catch(const std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+}
+
+int Span::shortestSpan()
+{
+    if (this->_vector.size() < 2 || this->_N < 2)
+        throw Span::EmptyException();
+    int span = INT_MAX;
     
+    std::vector<int>::iterator it1 = this->_vector.begin();
+    std::vector<int>::iterator it2 = it1 + 1;
+    
+    while (it1 != this->_vector.end())
+    {
+        it2 = it1 + 1;
+        while (it2 != this->_vector.end())
+        {
+            if (abs(*it1 - *it2) < span)
+                span = abs(*it1 - *it2);
+            it2++;
+        }
+        it1++;
+    }
+    return span;
+}
+
+int Span::longestSpan()
+{
+    if (this->_vector.size() < 2 || this->_N < 2)
+        throw Span::EmptyException();
+    return(*std::max_element(this->_vector.begin(), this->_vector.end()) - *std::min_element(this->_vector.begin(), this->_vector.end()));
 }
