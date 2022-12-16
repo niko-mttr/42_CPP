@@ -1,11 +1,11 @@
-NAME		=	Easy
+NAME		=	Span
 
 #COMPILATION
 CC			=	c++
-CFLAGS		=	-Wall -Werror -Wextra -std=c++98 -I includes -MMD
+CFLAGS		=	-Wall -Werror -Wextra -std=c++98 -I includes -MMD -g
 
 #SRC
-SRC			=	main.cpp
+SRC			=	main.cpp Span.cpp
 SRC_PATH	=	src/
 SRCS		=	$(addprefix $(SRC_PATH), $(SRC))
 
